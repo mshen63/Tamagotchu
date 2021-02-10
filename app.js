@@ -9,7 +9,7 @@ const Schema = mongoose.Schema;
 
 var dev_db_url = "mongodb+srv://mshen63:$HenS!jia080402@cluster0.rwgoi.mongodb.net/logging?retryWrites=true&w=majority";
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
-mongoose.connect(mongoDb, { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "mongo connection error"));
 
@@ -28,7 +28,7 @@ app.set("view engine", "ejs");
 passport.use(
   new LocalStrategy((username, password, done) => {
     User.findOne({ username: username }, (err, user) => {
-      if (err) { 
+      if (err) {
         return done(err);
       };
       if (!user) {
@@ -77,13 +77,13 @@ app.post("/sign-up", (req, res, next) => {
       password: hashedPassword,
       pet: req.body.animal
     }).save(err => {
-      if (err) { 
+      if (err) {
         return next(err);
       };
       res.redirect("/");
     });
         })
-  
+
 });
 
 app.post(
