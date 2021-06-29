@@ -7,7 +7,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-var dev_db_url = "mongodb+srv://mshen63:$HenS!jia080402@cluster0.rwgoi.mongodb.net/logging?retryWrites=true&w=majority";
+var dev_db_url = ;
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 const db = mongoose.connection;
