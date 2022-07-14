@@ -10,20 +10,9 @@
   <% if (user) {%>
     <h1>WELCOME BACK <%= user.username %>
     </h1>
-    <input type="file" accept="audio/*" capture id="recorder">
-    <img src="<%= user.animal==="dog" ? "https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0d3f33fb6aa6e0154b7713a00454c83d":"https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg"%>">
-    <audio id="player" controls></audio>
-    <script>
-      const recorder = document.getElementById('recorder');
-      const player = document.getElementById('player');
-
-      recorder.addEventListener('change', function (e) {
-        const file = e.target.files[0];
-        const url = URL.createObjectURL(file);
-        // Do something with the audio file.
-        player.src = url;
-      });
-    </script>
+    <p>You're cute :3</p>
+    <img src="https://media.istockphoto.com/photos/funny-winking-kitten-picture-id1267021092?k=20&m=1267021092&s=612x612&w=0&h=yzwxZXklHn5NwDTgKmbq2Ojtg3pga6j8K3oT7lLneAY=">
+    
     <a href="/log-out">LOG OUT</a>
     <% } else { %>
       <h1>please log in</h1>
